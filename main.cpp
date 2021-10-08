@@ -7,6 +7,7 @@ using namespace std;
 
 int main() {
 
+    // Create a ripe banana
     Banana* ripeBanana = new Banana("Yellow", 75);
     cout << "Ripe Banana color: " << ripeBanana->getColor()
          << ", weight: " << ripeBanana->getWeight()
@@ -14,12 +15,14 @@ int main() {
          << endl;
 
 
+    // Create a none ripe banana
     Banana* youngBanana = new Banana("Green", 44);
     cout << "Young Banana color: " << youngBanana->getColor()
          << ", weight: " << youngBanana->getWeight()
          << ", calories " << youngBanana->getCalories()
          << endl;
 
+    // Create a monkey
     Monkey* george = new Monkey("Curious George");
 
     cout << george->getName()
@@ -27,6 +30,7 @@ int main() {
          << ", he is " << (george->isHungry() ? "hungry" : "not hungry")
          << endl;
 
+    // use up some energy
     george->swingFromTrees();
     george->swingFromTrees();
     george->swingFromTrees();
@@ -36,6 +40,7 @@ int main() {
          << ", he is " << (george->isHungry() ? "hungry" : "not hungry")
          << endl;
 
+    // give the monkey a none ripe banana
     george->giveBanana(youngBanana);
 
 
@@ -44,7 +49,7 @@ int main() {
          << ", he is " << (george->isHungry() ? "hungry" : "not hungry")
          << endl;
 
-
+    // give the monkey a ripe banana
     george->giveBanana(ripeBanana);
 
 
@@ -53,6 +58,8 @@ int main() {
          << ", he is " << (george->isHungry() ? "hungry" : "not hungry")
          << endl;
 
+
+    // always clean up our memory.
     delete ripeBanana;
     delete youngBanana;
     delete george;
